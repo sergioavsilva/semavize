@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:menuApp="http://java.sun.com/jsf/composite/menus">
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+	<title>Semavize</title>
+</h:head>
+<h:body>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<h:outputScript name="jquery.maskMoney.js" library="js" />
+	<h:outputScript name="jquery.maskedinput.js" library="js" />
+
+	<h:outputStylesheet name="style.css" library="css" target="head" />
+	<h:outputStylesheet name="bootstrap.css" library="css" target="head" />
+	<h:outputStylesheet name="bootmetro.css" library="css" target="head" />
+	<h:outputStylesheet name="metro-ui-light.css" library="css"	target="head" />
+	<h:outputStylesheet name="icomoon.css" library="css" target="head" />
+	<h:outputStylesheet name="bootmetro-charms.css" library="css"	target="head" />
+	<h:outputStylesheet name="bootmetro-tiles.css" library="css" target="head" />
+	<h:outputStylesheet name="custom.css" library="css" target="head" />
+	<h:outputStylesheet name="bootstrap-responsive.css" library="css"	target="head" />
+
+	<h:outputScript name="bootmetro.js" library="js" />
+	<h:outputScript name="bootmetro-charms.js" library="js" />
+	<h:outputScript name="bootstrap.min.js" library="js" />
+	<h:outputScript name="bootstrap-tab.js" library="js" />
+
+
+	<h:form prependId="false" id="form-principal" enctype="multipart/form-data">
+
+		<header id="nav-bar" class="container-fluid">
+		
+		<div class="row-fluid">
+			<div class="span4">
+				<div id="header-container">
+					<h5>Semavize software foundation</h5>
+					<div class="dropdown">
+						<a class="header-dropdown dropdown-toggle accent-color">
+							Package Manager Mail</a>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		</header>
+			
+				<div class="hero-unit">
+                 <h1>Olá, seja bem-vindo</h1>
+                 <p>Gerencie seus pacotes de maneira eficiênte.</p>
+                 <p><a class="btn btn-primary btn-large">Leia mais.</a></p>
+            </div>
+            
+			<div id="conteudoLogin">
+				<div id="boxLogin">
+	
+					<h:panelGrid columns="2">
+	
+						<h:outputLabel value="#{message['label.login.name']}"
+							for="j_username" styleClass="fontBold textFormRight" />
+						<h:panelGroup>
+							<h:inputText id="j_username" required="true" name="j_username"
+								value="#{mblogin.name}" maxlength="100" size="25"
+								requiredMessage="#{message['view.label.messageMandatory']}" />
+								<br />
+							<h:message for="j_username" />
+						</h:panelGroup>
+	
+						<h:outputLabel value="#{message['label.login.password']}"
+							for="j_password" styleClass="fontBold textFormRight" />
+						<h:panelGroup>
+							<h:inputSecret id="j_password" required="true" name="j_password"
+								value="#{mblogin.password}" maxlength="100" size="25"
+								requiredMessage="#{message['view.label.messageMandatory']}" />
+								<br />
+							<h:message for="j_password" />
+						</h:panelGroup>
+	
+						<br />
+						<h:commandButton type="submit" id="login"
+							action="#{mblogin.doLogin}"
+							value="#{message['botao.login.login']}" />
+	
+					</h:panelGrid>
+	
+				</div>	
+			</div>
+			
+		
+            		
+         </h:form>
+</h:body>
+</html>
+
+
+

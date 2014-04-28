@@ -1,0 +1,39 @@
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.3.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.2
+    http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.2.xsd">
+
+	<!-- ################################## ADMINISTRATOR ######################### -->
+	
+	<url-mapping id="administrator">
+		<pattern value="/administrator/" />
+		<view-id value="/administrator/default.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="scheduletranking">
+		<pattern value="/administrator/scheduletranking/" />
+		<view-id value="/administrator/scheduletranking/scheduletranking.xhtml" />
+	</url-mapping>
+	
+	<!-- ################################## APPLICATION ######################### -->
+	<url-mapping id="application">
+		<pattern value="/application/" />
+		<view-id value="/application/default.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="historynumber">
+		<pattern value="/application/mail/" />
+		<view-id value="/application/mail/historynumber.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="uploadinfopackage">
+		<pattern value="/application/uploadinfopackage/" />
+		<view-id value="/application/uploadinfopackage/uploadinfopackage.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="customer">
+		<pattern value="/application/customer/" />
+		<view-id value="/application/customer/customer.xhtml" />
+	</url-mapping>
+	
+</pretty-config>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	template="/administrator/default.xhtml">
+	<ui:define name="content1">
+
+		<rich:tabPanel switchType="client" styleClass="navigation"
+			onbeforeitemchange="return false;">
+			<rich:tab header="#{message['label.alltasks']}">
+
+				<div id="container-data">
+					<div id="menuCombo">
+						<h:selectOneMenu value="#{mbScheduleTracking.operacao}">
+							<f:selectItem
+								itemLabel="#{message['label.selectonemanu.operation.filter']}"
+								itemValue="1" />
+							<f:selectItem
+								itemLabel="#{message['label.selectonemanu.operation.insert']}"
+								itemValue="2" />
+							<f:selectItem
+								itemLabel="#{message['label.selectonemanu.operation.remove']}"
+								itemValue="4" />
+							<f:ajax event="change" render="pgPackageHistor"
+								listener="#{mbScheduleTracking.refrehInputsMandatory()}" />
+						</h:selectOneMenu>
+					</div>
+
+					<nav id="nav1">
+
+						<h:panelGrid id="pgPackageHistor" columns="2">
+
+							<h:outputLabel value="#{message['label.alltasks.name']}" />
+							<h:panelGroup>
+								<h:inputText id="name"
+									value="#{mbScheduleTracking.task.name}" size="10"
+									required="#{mbScheduleTracking.mandatory}"
+									requiredMessage="#{message['view.label.messageMandatory']}" />
+								<br />
+								<h:message for="name" />
+							</h:panelGroup>
+
+							<h:outputLabel value="#{message['label.alltasks.hour']}" />
+							<h:panelGroup>
+								<h:inputText id="hour"
+									value="#{mbScheduleTracking.task.hour}" size="10"
+									required="#{mbScheduleTracking.mandatory}"
+									requiredMessage="#{message['view.label.messageMandatory']}" />
+								<br />
+								<h:message for="hour" />
+							</h:panelGroup>
+
+							<h:outputLabel value="#{message['label.alltasks.minute']}" />
+							<h:panelGroup>
+								<h:inputText id="minute"
+									value="#{mbScheduleTracking.task.minute}" size="10"
+									required="#{mbScheduleTracking.mandatory}"
+									requiredMessage="#{message['view.label.messageMandatory']}" />
+								<br />
+								<h:message for="minute" />
+							</h:panelGroup>
+
+						</h:panelGrid>
+
+						<div class="container-breadCrumb">
+							<div style="float: right">
+								<a4j:commandButton id="cmbRegister"
+									actionListener="#{mbScheduleTracking.execute}" value="Executar"
+									render="outSchedule,tableSchedule,pgPackageHistor" />
+							</div>
+						</div>
+
+					</nav>
+				</div>
+
+				<nav id="nav2">
+					<a4j:outputPanel id="outSchedule">
+						<p:dataTable id="tableSchedule" style="width:99.9%"
+							value="#{mbScheduleTracking.schedules}" var="task"
+							rowKey="#{task.indexTable}"
+							selection="#{mbScheduleTracking.selected}"
+							rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+							rowIndexVar="rowIx" paginator="true" rows="15"
+							selectionMode="single">
+
+							<p:ajax event="rowSelect"
+								listener="#{mbScheduleTracking.refrehInputs()}"
+								update=":form-principal:pgPackageHistor">
+							</p:ajax>
+
+							<p:column headerText="Name" style="width:50px">#{task.name}</p:column>
+							<p:column headerText="#{message['label.user.name']}"
+								style="width:50px"> #{task}</p:column>
+						</p:dataTable>
+					</a4j:outputPanel>
+				</nav>
+
+			</rich:tab>
+		</rich:tabPanel>
+
+	</ui:define>
+</ui:composition>

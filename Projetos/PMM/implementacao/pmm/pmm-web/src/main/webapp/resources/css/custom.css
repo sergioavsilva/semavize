@@ -1,0 +1,136 @@
+.mediumListIconTextItem_1:hover {
+	border: solid 3px #F5F3F3;
+	background-color: #F5F3F3;
+}
+
+.mediumListIconTextItem_1 {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width: 300px;
+	height: 190px;
+	border: solid 3px transparent;
+	background-color: white;
+	cursor: pointer;
+	text-align: left;
+}
+
+.mediumListIconTextItem_2 {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width: 350px;
+	height: 363px;
+	border: solid 3px transparent;
+	background-color: white;
+	cursor: pointer;
+	text-align: left;
+}
+
+.mediumListIconTextItem_2:hover {
+	border: solid 3px #F5F3F3;
+	background-color: #F5F3F3;
+}
+
+.mediumListIconTextItem_3 {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width: 350px;
+	height: 363px;
+	border: solid 3px transparent;
+	background-color: white;
+	cursor: pointer;
+	text-align: left;
+}
+
+.mediumListIconTextItem_3:hover {
+	border: solid 3px #F5F3F3;
+	background-color: #F5F3F3;
+}
+
+.mediumListIconTextItem_4 {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width: 350px;
+	height: 363px;
+	border: solid 3px transparent;
+	overflow: hidden;
+	background-color: white;
+	cursor: pointer;
+	text-align: left;
+}
+
+.mediumListIconTextItem_4:hover {
+	border: solid 3px #F5F3F3;
+	background-color: #F5F3F3;
+}
+
+.mediumListIconTextItem_5 {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width: 570px;
+	height: 363px;
+	border: solid 3px transparent;
+	overflow: hidden;
+	background-color: white;
+	cursor: pointer;
+	text-align: left;
+}
+
+.mediumListIconTextItem_5:hover {
+	border: solid 3px #F5F3F3;
+	background-color: #F5F3F3;
+}
+
+.mediumListIconTextItem_6 {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width: 200px;
+	height: 100px;
+	padding: 5px;
+	border: solid 3px transparent;
+	overflow: hidden;
+	background-color: white;
+	cursor: pointer;
+	text-align: left;
+}
+
+.mediumListIconTextItem_7 {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width: 230px;
+	height: 100px;
+	border: solid 3px transparent;
+	overflow: hidden;
+	background-color: white;
+	cursor: pointer;
+	text-align: left;
+}
+
+#pgPackageHistor_1 input {
+	color: black;
+}
+
+#pgPackageHistor_1 button[type="submit"],input[type="submit"] {
+	background-color: #24A0DA
+}
+
+/** A label fica alinhada a direita junto ao inputText ***/
+.textFormRight {
+	text-align: right;
+}
+
+/** ########## Login  ############## **/
+#boxLogin {
+	margin: 100px 0px 0px 0px;
+}
+
+#boxLogin table {
+	margin: auto;
+}
+/** ########## Login  ############## **/

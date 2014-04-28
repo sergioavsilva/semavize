@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans 
+	
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		                 http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		                 http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd                         
+                        http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+						http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<sec:http auto-config="true" >
+		 
+	<sec:form-login login-page='/login.xhtml'
+						default-target-url='/application'
+						authentication-failure-url='/login.xhtml' 
+						always-use-default-target="true" />
+						
+		<!-- Os patterns influencian no prettu-config.xml -->
+	<sec:intercept-url pattern="/application/**" access="ROLE_USER" />
+	<sec:intercept-url pattern="/administrator/**" access="ROLE_ADM" />
+										
+	<sec:logout invalidate-session="false" delete-cookies="JSESSIONID" logout-success-url="/application"/>
+			 
+	</sec:http>
+	
+	<!-- define os pacotes/subpacotes que onde serão procurados beans do spring 	<context:annotation-config />-->
+	<context:component-scan annotation-config="false" base-package="br.com.jventura.administrator.security" />	
+	
+	<!-- Se vc usar JNDI 
+		java:jboss/datasources/PostgreSQLDS
+		java:jboss/datasources/ExampleDS
+		java:/comp/env/jdbc/SEMAVIZEDB
+	-->
+	<beans:bean id="dataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<beans:property name="jndiName">
+			<beans:value>java:jboss/datasources/PMMDS</beans:value>
+		</beans:property>
+	</beans:bean>
+	
+	<!-- 
+	hibernate 4 - org.springframework.orm.hibernate4.LocalSessionFactoryBean
+	hibernate 3 - org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean
+	 -->
+
+	<beans:bean id="sessionFactory"	class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"	destroy-method="destroy" >
+		<beans:property name="dataSource">
+			<beans:ref local="dataSource" />
+		</beans:property>
+		
+		<beans:property name="annotatedClasses">
+			<beans:list>
+				<beans:value>br.com.jventura.administrator.security.entity.User
+				</beans:value>
+				<beans:value>br.com.jventura.administrator.security.entity.Role
+				</beans:value>
+			</beans:list>
+		</beans:property>
+
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.bytecode.use_reflection_optimizer">false</beans:prop>
+				<beans:prop key="hibernate.connection.driver_class">org.postgresql.Driver</beans:prop> <!-- mude para o driver do seu banco -->
+				<beans:prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</beans:prop> <!-- mude para o dialeto do seu banco -->
+				<beans:prop key="hibernate.show_sql">true</beans:prop>
+				<beans:prop key="hibernate.current_session_context_class">thread</beans:prop>
+				<beans:prop key="format_sql">true</beans:prop>
+				<beans:prop key="hibernate.use_outer_join">true</beans:prop>
+				<beans:prop key="hibernate.max_fetch_depth">1</beans:prop>
+				<beans:prop key="hibernate.jdbc.batch_size">0</beans:prop>
+				<beans:prop key="hibernate.search.autoregister_listeners">false</beans:prop>
+				<!-- beans:prop key="hibernate.default_schema" >public</beans:prop -->
+	
+			</beans:props>
+		</beans:property>
+
+	</beans:bean>
+
+	
+	<beans:bean id="hibernateUserDetailsService"
+		class="br.com.jventura.security.login.service.UserLoginDetailService">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+
+	<sec:authentication-manager alias="authenticationManager">
+		<sec:authentication-provider
+			user-service-ref="hibernateUserDetailsService">
+		</sec:authentication-provider>
+	</sec:authentication-manager>
+
+    <!-- Log desabilitado -->
+	<!-- beans:bean id="loggerListener"
+		class="org.springframework.security.access.event.LoggerListener" / -->
+
+</beans:beans>

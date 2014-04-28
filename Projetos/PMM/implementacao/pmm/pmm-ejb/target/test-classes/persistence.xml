@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="PMMDS">
+
+		<jta-data-source>java:jboss/datasources/PMMDS</jta-data-source>
+
+		<class>br.com.semavize.pmm.tracking.model.Task</class>
+		<class>br.com.semavize.pmm.customer.model.Customer</class>
+		<class>br.com.semavize.pmm.mailpackage.model.Package</class>
+		
+		<properties>
+			<!-- Properties for Hibernate -->
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+			<property name="hibernate.connection.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="50"/>
+		</properties>
+
+	</persistence-unit>
+</persistence>

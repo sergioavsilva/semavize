@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition 
+ 	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	template="/application/default.xhtml">
+  <ui:define name="content1">
+
+		<rich:tabPanel switchType="client" styleClass="navigation" onbeforeitemchange="return false;">
+			<rich:tab header="#{message['label.product']}" >
+
+				<div id="container-data">
+					<div id="menuCombo">
+					
+					</div>
+
+					<nav id="nav1">
+
+						<h:panelGrid id="pgPackageHistor" columns="2">
+							
+							<h:outputLabel value="Tipo de envio" />
+							<h:panelGroup>
+							<h:selectOneMenu id="select" value="#{mbPackageHistory.sendType}" 
+						 		converter="converterSendType">
+						 		<f:selectItem  itemLabel="" noSelectionOption="true"/>
+								<f:selectItems value="#{mbPackageHistory.sendTypeItens}" />				
+							</h:selectOneMenu>
+							<br />
+							<h:message for="select" />
+							</h:panelGroup>
+							
+							<h:outputLabel value="Cep de origem" />
+							<h:panelGroup>
+								<h:inputText id="cepFrom" value="#{mbPackageHistory.mailPackage.cepFrom}" size="10" required="true" requiredMessage="#{message['view.label.messageMandatory']}"/>
+								<br />
+								<h:message for="cepFrom" />
+							</h:panelGroup>
+							
+							<h:outputLabel value="Cep de destino" />
+							
+							<h:panelGroup>
+								<h:inputText id="cepTo" value="#{mbPackageHistory.mailPackage.cepTo}" size="10" required="true" requiredMessage="#{message['view.label.messageMandatory']}"/>
+								<br />
+								<h:message for="cepTo" />
+							</h:panelGroup>
+							
+							<h:outputLabel value="Numero do pacote" />
+							<h:panelGroup>
+								<h:inputText id="productLab" value="#{mbPackageHistory.mailPackage.trackingNumber}" required="true" requiredMessage="#{message['view.label.messageMandatory']}"/>
+								<br />
+								<h:message for="productLab" />
+							</h:panelGroup>	
+						
+							
+						</h:panelGrid>
+
+						<div class="container-breadCrumb">
+							<div style="float: right">
+								<a4j:commandButton id="cmbRegister"
+									actionListener="#{mbPackageHistory.execute}" value="Executar"
+									render="outTableProduct,pgPackageHistor" />
+							</div>
+						</div>					
+
+					</nav>
+				</div>
+		
+				<nav id="nav2">
+					<a4j:outputPanel id="outTableProduct">
+					
+						<p:dataTable id="tableProduct" var="productlist" value="#{mbPackageHistory.listPackageStatus}" paginator="true" rows="15">							
+							
+							<p:column style="width:4%">
+        					    <p:rowToggler />
+        					</p:column>
+        
+							<p:column headerText="Numero" style="padding:0px 10px">#{productlist.trackingNumber}</p:column>
+							
+							<p:column headerText="Prazo de entrega" style="padding:0px 10px">#{productlist.dateBeenDelivered}</p:column>
+							
+							 <p:rowExpansion >
+							 
+							 	<p:dataTable var="stats" value="#{productlist.pkgHistory.evento}">
+													           							
+									   <p:column headerText="Situação">
+                							#{stats.descricao}
+           							    </p:column>
+
+							            <p:column headerText="Horario">
+                							#{stats.hora}
+            							</p:column>
+            							
+            							 <p:column headerText="Horario">
+                							#{stats.cidade}
+            							</p:column>
+            							
+							    </p:dataTable>
+							                	
+						   	 </p:rowExpansion>
+        
+						</p:dataTable>
+		
+					</a4j:outputPanel>
+				</nav>
+
+			</rich:tab>
+		</rich:tabPanel>
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,76 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<!-- INTERFACE -->
+<composite:interface>
+</composite:interface>
+
+<!-- IMPLEMENTATION -->
+<composite:implementation>
+	<rich:toolbar  id="rich-toolbar">
+
+		<rich:dropDownMenu styleClass="decoration-rich-menu" mode="ajax">
+			<f:facet name="label">
+				<h:panelGroup>
+					<h:outputText value="Cadastro" />
+				</h:panelGroup>
+			</f:facet>
+
+			<rich:menuItem label="Loja" action="pretty:store"  immediate="true" />
+		
+		</rich:dropDownMenu>
+
+		<rich:dropDownMenu styleClass="decoration-rich-menu" mode="ajax"
+			rendered="#{sec:ifAnyGranted('ROLE_NOVO')}">
+			<f:facet name="label">
+				<h:panelGroup>
+					<h:outputText value="Agenda" />
+				</h:panelGroup>
+			</f:facet>
+
+			<rich:menuItem label="People" action="pretty:people" immediate="true" />
+			<rich:menuItem label="Street" action="pretty:people" immediate="true" />
+			<rich:menuItem label="City" action="pretty:people" immediate="true" />
+
+		</rich:dropDownMenu>
+
+		<rich:dropDownMenu styleClass="decoration-rich-menu" mode="ajax">
+			<f:facet name="label">
+				<h:panelGroup>
+					<h:outputText value="Mub" />
+				</h:panelGroup>
+			</f:facet>
+
+			<rich:menuItem label="Endereço" action="pretty:mub_address" immediate="true" />
+		
+		</rich:dropDownMenu>
+
+		<rich:dropDownMenu styleClass="decoration-rich-menu" mode="ajax">
+			<f:facet name="label">
+				<h:panelGroup>
+					<h:outputText value="Relatorio" />
+				</h:panelGroup>
+			</f:facet>
+
+			<rich:menuItem label="People" action="pretty:people" immediate="true" />
+			<rich:menuItem label="Street" action="pretty:people" immediate="true" />
+			<rich:menuItem label="City" action="pretty:people" immediate="true" />
+
+		</rich:dropDownMenu>
+
+	
+	</rich:toolbar>
+</composite:implementation>
+
+</html>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<sroxml>
+    <versao>1.0</versao>
+    <qtd>4</qtd>
+    <TipoPesquisa>Lista de Objetos</TipoPesquisa>
+    <TipoResultado>Todos os eventos</TipoResultado>
+    <objeto>
+        <numero>SW437574989BR</numero>
+        <evento>
+            <tipo>BDE</tipo>
+            <status>01</status>
+            <data>09/10/2012</data>
+            <hora>14:39</hora>
+            <descricao>Entregue</descricao>
+            <recebedor></recebedor>
+            <documento></documento>
+            <comentario></comentario>
+            <local>CEE TAQUARAL</local>
+            <codigo>13087971</codigo>
+            <cidade>CAMPINAS</cidade>
+            <uf>SP</uf>
+            <sto>74654403</sto>
+        </evento>
+        <evento>
+            <tipo>OEC</tipo>
+            <status>01</status>
+            <data>09/10/2012</data>
+            <hora>08:28</hora>
+            <descricao>Saiu para entrega</descricao>
+            <local>CEE TAQUARAL</local>
+            <codigo>13087971</codigo>
+            <cidade>CAMPINAS</cidade>
+            <uf>SP</uf>
+            <sto>74654403</sto>
+        </evento>
+        <evento>
+            <tipo>DO</tipo>
+            <status>01</status>
+            <data>09/10/2012</data>
+            <hora>07:39</hora>
+            <descricao>Encaminhado</descricao>
+            <local>CTE CAMPINAS</local>
+            <codigo>13050971</codigo>
+            <cidade>VALINHOS</cidade>
+            <uf>SP</uf>
+            <sto>00048540</sto>
+            <destino>
+                <local>CEE TAQUARAL</local>
+                <codigo>13087971</codigo>
+                <cidade>CAMPINAS</cidade>
+                <bairro>Jd. Sta. Candida</bairro>
+                <uf>SP</uf>
+            </destino>
+        </evento>
+        <evento>
+            <tipo>DO</tipo>
+            <status>01</status>
+            <data>08/10/2012</data>
+            <hora>22:10</hora>
+            <descricao>Encaminhado</descricao>
+            <local>CTE JAGUARE</local>
+            <codigo>05314979</codigo>
+            <cidade>SAO PAULO</cidade>
+            <uf>SP</uf>
+            <sto>72618001</sto>
+            <destino>
+                <local>CEE TAQUARAL</local>
+                <codigo>13087971</codigo>
+                <cidade>CAMPINAS</cidade>
+                <bairro>Jd. Sta. Candida</bairro>
+                <uf>SP</uf>
+            </destino>
+        </evento>
+        <evento>
+            <tipo>RO</tipo>
+            <status>01</status>
+            <data>08/10/2012</data>
+            <hora>14:01</hora>
+            <descricao>Encaminhado</descricao>
+            <local>ACF CERRO CORA</local>
+            <codigo>05061970</codigo>
+            <cidade>SAO PAULO</cidade>
+            <uf>SP</uf>
+            <sto>00025987</sto>
+            <destino>
+                <local>CTE JAGUARE</local>
+                <codigo>05314979</codigo>
+                <cidade>SAO PAULO</cidade>
+                <bairro>VILA LEOPOLDINA</bairro>
+                <uf>SP</uf>
+            </destino>
+        </evento>
+        <evento>
+            <tipo>RO</tipo>
+            <status>01</status>
+            <data>08/10/2012</data>
+            <hora>14:01</hora>
+            <descricao>Encaminhado</descricao>
+            <local>ACF CERRO CORA</local>
+            <codigo>05061970</codigo>
+            <cidade>SAO PAULO</cidade>
+            <uf>SP</uf>
+            <sto>00025987</sto>
+            <destino>
+                <local>CTE JAGUARE</local>
+                <codigo>05314979</codigo>
+                <cidade>SAO PAULO</cidade>
+                <bairro>VILA LEOPOLDINA</bairro>
+                <uf>SP</uf>
+            </destino>
+        </evento>
+        <evento>
+            <tipo>PO</tipo>
+            <status>01</status>
+            <data>08/10/2012</data>
+            <hora>09:35</hora>
+            <descricao>Postado</descricao>
+            <local>ACF CERRO CORA</local>
+            <codigo>05061970</codigo>
+            <cidade>SAO PAULO</cidade>
+            <uf>SP</uf>
+            <sto>00025987</sto>
+        </evento>
+    </objeto>
+    <objeto>
+        <numero>SX142052885BR</numero>
+        <evento>
+            <tipo>BDE</tipo>
+            <status>01</status>
+            <data>18/07/2012</data>
+            <hora>09:48</hora>
+            <descricao>Entregue</descricao>
+            <recebedor></recebedor>
+            <documento></documento>
+            <comentario></comentario>
+            <local>CEE CURITIBA NORTE</local>
+            <codigo>82560970</codigo>
+            <cidade>CURITIBA</cidade>
+            <uf>PR</uf>
+            <sto>36653209</sto>
+        </evento>
+        <evento>
+            <tipo>OEC</tipo>
+            <status>01</status>
+            <data>18/07/2012</data>
+            <hora>08:23</hora>
+            <descricao>Saiu para entrega</descricao>
+            <local>CEE CURITIBA NORTE</local>
+            <codigo>82560970</codigo>
+            <cidade>CURITIBA</cidade>
+            <uf>PR</uf>
+            <sto>36653209</sto>
+        </evento>
+        <evento>
+            <tipo>DO</tipo>
+            <status>01</status>
+            <data>18/07/2012</data>
+            <hora>05:43</hora>
+            <descricao>Encaminhado</descricao>
+            <local>CTE CURITIBA</local>
+            <codigo>80237970</codigo>
+            <cidade>CURITIBA</cidade>
+            <uf>PR</uf>
+            <sto>36605000</sto>
+            <destino>
+                <local>CEE CURITIBA NORTE</local>
+                <codigo>82560970</codigo>
+                <cidade>CURITIBA</cidade>
+                <bairro>BOA VISTA</bairro>
+                <uf>PR</uf>
+            </destino>
+        </evento>
+        <evento>
+            <tipo>PO</tipo>
+            <status>01</status>
+            <data>17/07/2012</data>
+            <hora>16:14</hora>
+            <descricao>Postado</descricao>
+            <local>ACC SCHERER</local>
+            <codigo>85869970</codigo>
+            <cidade>FOZ DO IGUACU</cidade>
+            <uf>PR</uf>
+            <sto>36929565</sto>
+        </evento>
+    </objeto>
+</sroxml>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type"
+	content="application/xhtml+xml; charset=utf-8" />
+<link rel="stylesheet" type="text/css"
+	href="resources/css/style_master.css" />
+<script src="resources/js/jquery-1.8.3.min.js" type="text/javascript"
+	charset="utf-8"></script>
+
+<script>
+	$(document).ready (function() {
+		
+		  $('#teste .button_menu').click(
+		    function() {
+			    
+		    	if($(".header").css("display") == 'block') {
+			          $("#a_more").removeClass("cssadd");
+		         } else {
+		        	 $("#a_more").addClass("cssadd");
+		         }
+					
+	    		 $(".header").slideToggle();
+				
+		    });
+		    
+		});
+
+	
+	$(document).ready (function() {
+		  $('.main').click(
+		    function() {
+		    $(".header").slideUp();
+		    $("#a_more").removeClass("cssadd");
+					    
+			 });
+		});
+
+	
+	
+	</script>
+</head>
+<body>
+	<div id="container">
+
+		<header> 
+		
+		</header>
+
+		<div class="main">
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+		</div>
+
+		<footer>
+			<div id="pai" style="position: absolute; top: 0px; width: 100%">
+				<div class="header">
+					<div class="inner">Executar efeito</div>
+				</div>
+				<div id="teste">
+					<div class="header_menu_left">
+						
+					</div>
+					<div class="header_menu_right">
+						<ul>
+							<li><a href="#" id="a_more" class="button_menu">+More</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			<p>footer</p>
+		</footer>
+	</div>
+</body>
+</html>
+
+<!-- 
+	<header id="slidebottom" class="header">
+  			<div class="inner">Executar efeito</div>
+  			<div id="teste">
+  				<button>Efeito corredico reverso</button>
+  			</div> 	
+		</header>
+		
+		<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type"
+	content="application/xhtml+xml; charset=utf-8" />
+<link rel="stylesheet" type="text/css"
+	href="resources/css/style_master.css" />
+<script src="resources/js/jquery-1.8.3.min.js" type="text/javascript"
+	charset="utf-8"></script>
+
+<script>
+	$(document).ready (function() {
+		  $('#teste button').click(
+		    function() {
+		    $(".header").slideToggle();
+		   });
+		});
+
+	</script>
+</head>
+<body>
+	<div id="container">
+		
+		<header id="slidebottom" class="header">
+			<div class="inner">Executar efeito</div>
+		</header>
+		<div id="teste">
+			<button>Efeito corredico reverso</button>
+		</div>
+		
+		<div id="main">
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+			<p>3ui4hu3i2h4ui32h4iu32h4ih32u</p>
+		</div>
+
+		<footer>
+			<p>footer</p>
+		</footer>
+	</div>
+</body>
+</html>
+ -->

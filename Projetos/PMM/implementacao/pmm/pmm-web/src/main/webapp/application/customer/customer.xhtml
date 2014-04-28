@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	template="/application/default.xhtml">
+	<ui:define name="content1">
+
+		<div class="container-fluid">
+			<div class="tabbable">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active"><a href="#home" data-toggle="tab">Cliente</a></li>
+				</ul>
+				<div class="tab-content">
+
+					<div class="tab-pane fade in active" id="home">
+			
+						<div id="listview-grid-demo" style="padding: 0px; margin: auto; text-align: center;">
+							
+							<div class="mediumListIconTextItem_2">
+								<h:panelGrid id="pgPackageHistor" columns="2">
+									
+									<h:outputLabel value="Nome :" styleClass="textFormRight"/>
+									<h:inputText value="#{mbCustomer.customer.name}" />
+									
+									<h:outputLabel value="Usuário :" styleClass="textFormRight"/>
+									<h:inputText value="" />
+									
+									<h:outputLabel value="Senha :" styleClass="textFormRight"/>
+									<h:inputText value="" />
+									
+									<h:outputLabel value="Empresa :" styleClass="textFormRight"/>
+									<h:inputText value="#{mbCustomer.customer.company}" />
+									
+									<h:outputLabel value="E-mail :" styleClass="textFormRight"/>
+									<h:inputText value="#{mbCustomer.customer.email}" />
+									
+									<h:outputLabel value="Quantidade de Pacotes :" styleClass="textFormRight"/>
+									<h:inputText value="#{mbCustomer.customer.qdtPackages}" />
+								
+								</h:panelGrid>
+							</div>				
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

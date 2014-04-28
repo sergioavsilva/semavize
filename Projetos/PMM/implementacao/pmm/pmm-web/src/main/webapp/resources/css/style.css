@@ -1,0 +1,44 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url("#{resource['fonts/icomoon.eot']}");
+	src:url("#{resource['fonts/icomoon.eot?#iefix']}") format('embedded-opentype'),
+		url("#{resource['fonts/icomoon.woff']}") format('woff'),
+		url("#{resource['fonts/icomoon.ttf']}") format('truetype'),
+		url("#{resource['fonts/icomoon.svg#icomoon']}") format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-cog:before, .icon-user:before {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-cog:before {
+	content: "\e000";
+}
+.icon-user:before {
+	content: "\e00b";
+}
+
+.fs1{
+	font-size: 50px;
+}

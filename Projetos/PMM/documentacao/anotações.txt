@@ -1,0 +1,11 @@
+http://www.correios.com.br/encomendas/prazo/default.cfm
+
+http://www.correios.com.br/servicos/rastreamento/rastreamento.cfm
+
+DF099764854BR;SI859273377BR;DF017204762BR
+
+
+http://websro.correios.com.br/sro_bin/txect01$.Inexistente?P_LINGUA=001&P_TIPO=002&P_COD_LIS=DF099764854BR%3BSI859273377BR%3BDF017204762BR
+
+
+http://www.correios.com.br/webservices/

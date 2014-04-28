@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:menuApp="http://java.sun.com/jsf/composite/menus">
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+	<title>Semavize</title>
+	<script>
+		  <!-- http://www.rafaelwendel.com/2012/07/mascara-para-campos-monetarios-com-jquery-maskmoney/ -->
+		 $(document).ready(function(){
+			       $("input.dinheiro").maskMoney({showSymbol:true, symbol:"R$", decimal:",", thousands:".",allowNegative:true});
+			 });
+		 $(document).ready(function(){
+			   $("input.date").mask("99/9999",{placeholder:" "});
+			});
+    </script>
+</h:head>
+<h:body>
+	<script 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<h:outputScript name="jquery.maskMoney.js" library="js" />
+	<h:outputScript name="jquery.maskedinput.js" library="js" />
+	
+	<h:outputStylesheet name="style.css" library="css" target="head" />
+	<h:outputStylesheet name="bootstrap.css" library="css" target="head" />
+	<h:outputStylesheet name="bootmetro.css" library="css" target="head" />
+	<h:outputStylesheet name="metro-ui-light.css" library="css"	target="head" />
+	<h:outputStylesheet name="icomoon.css" library="css" target="head" />
+	<h:outputStylesheet name="bootmetro-charms.css" library="css" target="head" />
+	<h:outputStylesheet name="bootmetro-tiles.css" library="css" target="head" />
+	<h:outputStylesheet name="custom.css" library="css" target="head" />
+	<h:outputStylesheet name="bootstrap-responsive.css" library="css" target="head" />
+
+	<h:outputScript name="bootmetro.js" library="js" />
+	<h:outputScript name="bootmetro-charms.js" library="js" />
+	<h:outputScript name="bootstrap.min.js" library="js" />
+	<h:outputScript name="bootstrap-tab.js" library="js" />
+
+
+	<h:form prependId="false" id="form-principal"
+		enctype="multipart/form-data">
+
+		<header id="nav-bar" class="container-fluid">
+		<div class="row-fluid">
+			<div class="span4">
+				<div id="header-container">
+					<h5>Semavize software foundation</h5>
+					<div class="dropdown">
+						<a class="header-dropdown dropdown-toggle accent-color">Package Manager Mail</a>
+					</div>
+				</div>
+			</div>
+			<div id="top-info" class="pull-right">
+				<a href="#" class="pull-left">
+					<div class="top-info-block">
+						<h3>#{mbCurrentUser.nameCurrentUser}</h3>
+						<h4>Semavize</h4>
+					</div>
+					<div class="top-info-block">
+						<b class="icon-user"></b>
+					</div>
+				</a>
+				<hr class="separator pull-left">
+					<a id="settings" class="pull-left" href="#"> <b
+						class="icon-settings"></b>
+					</a></hr>
+			</div>
+		</div>
+		</header>
+
+		<ui:insert name="content" />
+
+
+		<footer class="win-commandlayout navbar-fixed-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="span7 align-left" style="text-align: right">
+
+					<a class="win-command"> <span
+						class="win-commandimage win-commandring">!</span> <span
+						class="win-label">Home</span>
+					</a>
+
+					<hr class="win-command" />
+
+					<button class="win-command">
+						<span class="win-commandimage win-commandring"></span> <span
+							class="win-label">Add</span>
+					</button>
+			
+					<h:commandLink immediate="true" action="pretty:customer" type="submit">
+						<button class="win-command">
+							<span class="win-commandimage win-commandring"></span>
+							<span class="win-label">Clientes</span>
+						</button>
+					</h:commandLink>
+					
+					<button class="win-command">
+						<span class="win-commandimage win-commandring"></span>
+						<span class="win-label">Reload</span>
+					</button>
+				</div>
+
+				<div class="span5 align-right" style="text-align: left">
+					<button class="win-command">
+						<span class="win-commandimage win-commandring"></span> 
+						<span class="win-label">Relatórios</span>
+					</button>					
+					<h:commandLink immediate="true" action="pretty:uploadinfopackage" type="submit">
+						<button class="win-command">
+								<span class="win-commandimage win-commandring"></span>
+								<span class="win-label">Upload</span>
+						</button>
+					</h:commandLink>
+				</div>
+			</div>
+		</div>
+		</footer>		
+         </h:form>
+</h:body>
+</html>
+
+
+
